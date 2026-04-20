@@ -38,14 +38,25 @@ toggleButton.setAttribute("data-action", "status-toggle");
 // Define the functions (e.g., toggleStatus, createTimestamp) and event listeners
 // here to handle the click event on the toggleButton [6, 7].
 
-function toggleStatus(e) {
-  e.preventDefault(); // prevents the anchor from jumping to top
 
-  // Toggle the 'hidden' class on the statusOutput div
+function toggleStatus(e) {
+  e.preventDefault(); // prevents the anchor from jumping to top of page
+
+  // Toggle the 'hidden' class
   statusOutput.classList.toggle("hidden");
+
+  // Check if statusOutput is visible
+  if (!statusOutput.classList.contains("hidden")) {
+    // Visible → highlight title
+    mainTitle.style.backgroundColor = "yellow";
+  } else {
+    // Hidden → remove highlight
+    mainTitle.style.backgroundColor = "";
+  }
 }
 
 toggleButton.addEventListener("click", toggleStatus);
+
 
 /* ======================================= */
 // --- Task 10: Timed Animation ---
