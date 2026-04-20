@@ -25,6 +25,8 @@ mainTitle.innerHTML = "DOM Project: Ready!";
 // Write the code here to use setAttribute() on the toggleButton element
 // to add the required 'data-action' attribute.
 
+toggleButton.setAttribute("data-action", "status-toggle");
+
 /* ======================================= */
 // --- Task 9: Looping and Applying Changes ---
 // Define and call the highlightListItems() function here so it runs on load.
