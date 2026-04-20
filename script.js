@@ -38,6 +38,15 @@ toggleButton.setAttribute("data-action", "status-toggle");
 // Define the functions (e.g., toggleStatus, createTimestamp) and event listeners
 // here to handle the click event on the toggleButton [6, 7].
 
+function toggleStatus(e) {
+  e.preventDefault(); // prevents the anchor from jumping to top
+
+  // Toggle the 'hidden' class on the statusOutput div
+  statusOutput.classList.toggle("hidden");
+}
+
+toggleButton.addEventListener("click", toggleStatus);
+
 /* ======================================= */
 // --- Task 10: Timed Animation ---
 // Define the startFlashing() and stopFlashing() functions using
