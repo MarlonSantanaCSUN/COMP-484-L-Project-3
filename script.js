@@ -89,3 +89,20 @@ toggleButton.addEventListener("click", toggleStatus);
 // Define the startFlashing() and stopFlashing() functions using
 // setInterval() and clearInterval() [8, 9], and bind them to the
 // timerButton using addEventListener for 'click' and 'dblclick' [10].
+
+function startFlashing() {
+  // Prevent multiple intervals from stacking
+  if (intervalId !== null) return;
+
+  intervalId = setInterval(function () {
+    controlPanel.classList.toggle("hidden");
+  }, 500);
+}
+
+function stopFlashing() {
+  clearInterval(intervalId);
+  intervalId = null; // reset so it can be started again
+}
+
+timerButton.addEventListener("click", startFlashing);
+timerButton.addEventListener("dblclick", stopFlashing);
