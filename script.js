@@ -38,21 +38,34 @@ toggleButton.setAttribute("data-action", "status-toggle");
 // Define the functions (e.g., toggleStatus, createTimestamp) and event listeners
 // here to handle the click event on the toggleButton [6, 7].
 
+function createTimestamp() {
+  // Create a new <span> element
+  const timeSpan = document.createElement("span");
+
+  // Set its content to the current time
+  timeSpan.innerHTML = " " + new Date().toLocaleTimeString();
+
+  // Append it to the statusOutput div
+  statusOutput.appendChild(timeSpan);
+}
 
 function toggleStatus(e) {
   e.preventDefault(); // prevents the anchor from jumping to top of page
 
   // Toggle the 'hidden' class
   statusOutput.classList.toggle("hidden");
-
+  
   // Check if statusOutput is visible
   if (!statusOutput.classList.contains("hidden")) {
     // Visible → highlight title
     mainTitle.style.backgroundColor = "yellow";
-  } else {
-    // Hidden → remove highlight
-    mainTitle.style.backgroundColor = "";
-  }
+    
+    // Add timestamp
+    createTimestamp();
+    } else {
+        // Hidden → remove highlight
+        mainTitle.style.backgroundColor = "";
+    }
 }
 
 toggleButton.addEventListener("click", toggleStatus);
