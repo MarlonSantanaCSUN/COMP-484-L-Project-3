@@ -70,13 +70,13 @@ function toggleStatus(e) {
   
   // Check if statusOutput is visible
   if (!statusOutput.classList.contains("hidden")) {
-    // Visible → highlight title
+    // Visible -> highlight title
     mainTitle.style.backgroundColor = "yellow";
     
     // Add timestamp
     createTimestamp();
     } else {
-        // Hidden → remove highlight
+        // Hidden -> remove highlight
         mainTitle.style.backgroundColor = "";
     }
 }
