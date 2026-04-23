@@ -106,3 +106,21 @@ function stopFlashing() {
 
 timerButton.addEventListener("click", startFlashing);
 timerButton.addEventListener("dblclick", stopFlashing);
+
+//Clear Timestamps Functionality
+const clearTimestampsButton = document.getElementById("clear-timestamps");
+
+
+// Define the clearTimestamps() function to remove all timestamp spans from the statusOutput div
+function clearTimestamps() {
+  // Select all timestamp spans inside statusOutput
+  const timestamps = statusOutput.querySelectorAll("span");
+
+  // Loop through each span and remove it from the DOM
+  timestamps.forEach(function(span) {
+    span.remove();
+  });
+}
+
+// Add event listener to the clearTimestampsButton
+clearTimestampsButton.addEventListener("click", clearTimestamps);
